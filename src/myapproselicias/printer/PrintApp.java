@@ -63,7 +63,7 @@ public class PrintApp {
 		sb.append(String.format(" CCF: %s  CCO: %s",pedido.getCcf(), pedido.getCco())+ "\n");
 		sb.append("CUPOM FISCAL \n");
 		
-		sb.append("ITEM   CÓDIGO   DESCRIÇÃO   QNT.  UN  VL  UNIT \n");
+		sb.append("ITEM   CÓDIGO   DESCRIÇÃO   QNT. UN  VL  UNIT \n");
 		sb.append("------------------------------------------------------------------\n");
 		sb.append(pedido.getId());
 		
