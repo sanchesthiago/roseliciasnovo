@@ -1,6 +1,6 @@
 package myapproselicias.cadastro;
 
-public class CadCliente {
+public class Cliente {
 	private Integer id;
 	private String nome;
 	private Long celular;
@@ -31,6 +31,10 @@ public class CadCliente {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public void setCadastro(Cadastro cadCliente) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 

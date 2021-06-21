@@ -8,9 +8,9 @@ import java.util.List;
 
 import myapproselicias.pedido.PedidoItem;
 import myapproselicias.printer.PrintApp;
-import myapproselicias.cadastro.CadCliente;
-import myapproselicias.cadastro.CadEmpresa;
-import myapproselicias.cadastro.CadEnd;
+import myapproselicias.cadastro.Cliente;
+import myapproselicias.cadastro.Empresa;
+import myapproselicias.cadastro.Endereco;
 import myapproselicias.cadastro.Cadastro;
 import myapproselicias.cadastro.Produto;
 import myapproselicias.pedido.Pedido;
@@ -21,25 +21,30 @@ private static final Date Date = null;
 
 public static void main(String[] args) {
 	
-	CadEmpresa empresa = new CadEmpresa();
-		empresa.setId(1);
-		empresa.setRazaoSocial("Roselicias LTDA");
-		empresa.setCnpj("23751874000186");
-		empresa.setie(999999999l);
-		empresa.setim(99999999l);
-	
-	CadEnd endereco = new CadEnd();
+	Empresa empresa = new Empresa();
+		Cadastro cadEmpresa = new Cadastro();
+		cadEmpresa.setId(1);
+		cadEmpresa.setRazaoSocial("Roselicias LTDA");
+		cadEmpresa.setCnpj("23751874000186");
+		cadEmpresa.setie(999999999l);
+		cadEmpresa.setim(99999999l);
+		empresa.setCadastro(cadEmpresa);
+		
+	Endereco endereco = new Endereco();
 		endereco.setLogradouro("Rua Carneiro Leão ");
 		endereco.setNumero(290  );
 		endereco.setComplemento(" Apto 31 Bloco 3 ");
 		endereco.setBairro("Bras");
 		endereco.setCidade(" São Paulo - SP");
+		cadEmpresa.setEndereco(endereco);
 	
-	CadCliente cliente = new CadCliente();
-		cliente.setId(1);
-		cliente.setNome("Thiago");
-		cliente.setCelular(11958675144l);
-		cliente.setEmail("thiago.sanches@gmail.com");
+	Cliente cliente = new Cliente();
+		Cadastro cadCliente = new Cadastro();
+		cadCliente.setId(1);
+		cadCliente.setNome("Thiago");
+		cadCliente.setCelular(11958675144l);
+		cadCliente.setEmail("thiago.sanches@gmail.com");
+		cliente.setCadastro(cadCliente);
 		
 		
 	Produto pao1 = new Produto();
@@ -51,10 +56,11 @@ public static void main(String[] args) {
 		
 	Pedido pedido = new Pedido();
 		pedido.setEmpresa(empresa);
+		pedido.setCliente(cliente);
 		pedido.setId(1);		
 		pedido.setValorTotal(30.00);
-		pedido.setCcf("00029");
-		pedido.setCco("00030");
+		pedido.setCcf("25");
+		pedido.setCco("280");
 		
 		Date data = GregorianCalendar.getInstance().getTime();
 		SimpleDateFormat format = new SimpleDateFormat();
@@ -68,7 +74,7 @@ public static void main(String[] args) {
 		item.setValorTotal(item.getValorUnit() * item.getQuantidade());
 		
 		itens.add(item);
-		
+		pedido.setItens(itens);
 		
 		/*
 		System.out.println("Razão Social: " + empresa.getRazaoSocial());
@@ -88,9 +94,10 @@ public static void main(String[] args) {
 		System.out.println("ITEM CÓDIGO DESCRIÇÃO QNT UN VL ");
 		System.out.println("----------------------------------------------------------------" );*/
 		
-		PrintApp.imprimirPedido(empresa);
-		PrintApp.imprimirPedido(endereco);
-		PrintApp.imprimirPedido(pedido);
+		//PrintApp.imprimirPedido(empresa);
+		//PrintApp.imprimirPedido(endereco);
+		//PrintApp.imprimirPedido(pedido);
+		PrintApp.imprimir(pedido);
 		
 		
 		/*for(PedidoItem i: pedido.getItens()) {

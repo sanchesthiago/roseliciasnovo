@@ -1,6 +1,6 @@
 package myapproselicias.cadastro;
 
-public class CadEnd {
+public class Endereco {
 	private String logradouro;
 	private Integer numero;
 	private String complemento;
@@ -38,7 +38,7 @@ public class CadEnd {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
-	public CadEnd getEndereco() {
+	public Endereco getEndereco() {
 		
 		return null;
 	}

@@ -3,7 +3,8 @@ package myapproselicias.pedido;
 import java.util.Date;
 import java.util.List;
 
-import myapproselicias.cadastro.CadEmpresa;
+import myapproselicias.cadastro.Cliente;
+import myapproselicias.cadastro.Empresa;
 
 
 public class Pedido {
@@ -51,19 +52,24 @@ public class Pedido {
 	public void setValorTotal(Double valorTotal) {
 		this.valorTotal = valorTotal;
 	}
-	public void setEmpresa(CadEmpresa empresa) {
+	
+	public void setEmpresa(Empresa empresa) {
 		
 		
 	}
 	
-	public CadEmpresa getEmpresa() {
+	public static Pedido getEmpresa() {
 		
 		return null;
 	}
 	
-	private static Pedido pedido() {
+	public static Pedido pedido() {
 		
 		return null;
+	}
+	public void setCliente(Cliente cliente) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

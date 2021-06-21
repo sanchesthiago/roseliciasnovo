@@ -1,11 +1,13 @@
 package myapproselicias.cadastro;
 
-public class CadEmpresa {
+public class Empresa {
 	private Integer id;
 	private String razaoSocial;
 	private String cnpj;
 	private Long ie;
 	private Long im;
+	
+	
 	public Integer getId() {
 		return id;
 	}
@@ -36,9 +38,17 @@ public class CadEmpresa {
 	public void setim(Long im) {
 		this.im = im;
 	}
-	public CadEmpresa getEmpresa() {
+	public static Empresa getEmpresa() {
 		
 		return null;
+	}
+	public static Empresa getPedido() {
+		
+		return null;
+	}
+	public void setCadastro(Cadastro cadEmpresa) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

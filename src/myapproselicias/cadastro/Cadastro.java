@@ -22,8 +22,8 @@ public class Cadastro {
 	public String getCelular() {
 		return celular;
 	}
-	public void setCelular(String celular) {
-		this.celular = celular;
+	public void setCelular(long l) {
+		this.celular = l;
 	}
 	public String getEmail() {
 		return email;
@@ -31,6 +31,27 @@ public class Cadastro {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public void setim(long l) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setie(long l) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setCnpj(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setRazaoSocial(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setEndereco(Endereco endereco) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	
 	
 
