@@ -103,20 +103,20 @@ public static void main(String[] args) {
 		//PrintApp.imprimirPedido(empresa);
 		//PrintApp.imprimirPedido(endereco);
 		//PrintApp.imprimirPedido(pedido);
-	String conteudo = PrintApp.gerarCupom(pedido);
+	//String conteudo = PrintApp.gerarCupom(pedido);
 	
-	File dir = new File("C:\\curso_java\\cupom");
-	 if(!dir.exists())
-			dir.mkdirs();
+	//File dir = new File("C:\\curso_java\\cupom");
+	// if(!dir.exists())
+		//	dir.mkdirs();
 		
-		File cupom = new File (dir, "cupom.txt");
+	//	File cupom = new File (dir, "cupom.txt");
 	//	Paths.
 		
 		/*for(PedidoItem i: pedido.getItens()) {
 			System.out.println(i.getProduto().getTitulo() + " Valor Da Venda " + i.getValorVenda() + " Valor Total " + i.getValorTotal());
 			
 		}*/
-	
+		System.out.println(PrintApp.gerarCupom(pedido));
 	}
 	
 
