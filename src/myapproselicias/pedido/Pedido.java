@@ -2,7 +2,7 @@ package myapproselicias.pedido;
 
 import java.util.Date;
 import java.util.List;
-
+import myapproselicias.cadastro.Cadastro;
 import myapproselicias.cadastro.Cliente;
 import myapproselicias.cadastro.Empresa;
 
@@ -11,10 +11,56 @@ public class Pedido {
 	private Integer id;
 	private Date data;
 	private Double valorTotal;
-	private List itens;
+	private Cliente cliente;
+	private List<PedidoItem> itens;
 	private String ccf;
 	private String cco;
-		
+	private Empresa empresa;
+	private String titulo;
+	private String descricao;
+	private String codBars;
+	
+	
+	
+	
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public String getCodBars() {
+		return codBars;
+	}
+
+	public void setCodBars(String codBars) {
+		this.codBars = codBars;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+	
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
+	}
 	
 	public String getCcf() {
 		return ccf;
@@ -28,11 +74,11 @@ public class Pedido {
 	public void setCco(String cco) {
 		this.cco = cco;
 	}
-	public List getItens() {
-		return itens;
-	}
-	public void setItens(List itens) {
+	public void setItens(List<PedidoItem> itens) {
 		this.itens = itens;
+	}
+	public List<PedidoItem> getItens() {
+		return itens;
 	}
 	public Integer getId() {
 		return id;
@@ -52,24 +98,4 @@ public class Pedido {
 	public void setValorTotal(Double valorTotal) {
 		this.valorTotal = valorTotal;
 	}
-	
-	public void setEmpresa(Empresa empresa) {
-		
-		
-	}
-	
-	public static Pedido getEmpresa() {
-		
-		return null;
-	}
-	
-	public static Pedido pedido() {
-		
-		return null;
-	}
-	public void setCliente(Cliente cliente) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-}
+}	

@@ -2,11 +2,21 @@ package myapproselicias.cadastro;
 
 public class Empresa {
 	private Integer id;
-	private String razaoSocial;
+	private String razaosocial;
 	private String cnpj;
 	private Long ie;
 	private Long im;
+	private Cadastro cadastro;
 	
+	
+	public Cadastro getCadastro() {
+		return cadastro;
+	}
+	
+	public void setCadastro(Cadastro cadastro) {
+		this.cadastro = cadastro;
+		
+	}
 	
 	public Integer getId() {
 		return id;
@@ -15,10 +25,10 @@ public class Empresa {
 		this.id = id;
 	}
 	public String getRazaoSocial() {
-		return razaoSocial;
+		return razaosocial;
 	}
 	public void setRazaoSocial(String razaoSocial) {
-		this.razaoSocial = razaoSocial;
+		this.razaosocial = razaoSocial;
 	}
 	public String getCnpj() {
 		return cnpj;
@@ -38,17 +48,5 @@ public class Empresa {
 	public void setim(Long im) {
 		this.im = im;
 	}
-	public static Empresa getEmpresa() {
-		
-		return null;
-	}
-	public static Empresa getPedido() {
-		
-		return null;
-	}
-	public void setCadastro(Cadastro cadEmpresa) {
-		// TODO Auto-generated method stub
-		
-	}
-	
+			
 }

@@ -2,18 +2,63 @@ package myapproselicias.cadastro;
 
 public class Cadastro {
 	private Integer id;
-	private static String nome;
+	private String nome;
 	private String celular;
 	private String email;
+	private Endereco endereco;
+	private String razaosocial;
+	private String cnpj;
+	private Long ie;
+	private Long im;
 	
 	
-	public Integer getId() {
-		return id;
+	
+	
+	
+	
+	
+	public Long getIe() {
+		return ie;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+
+	public void setIe(Long ie) {
+		this.ie = ie;
 	}
-	public static String getNome() {
+
+	public Long getIm() {
+		return im;
+	}
+
+	public void setIm(Long im) {
+		this.im = im;
+	}
+
+	public String getCnpj() {
+		return cnpj;
+	}
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
+	}
+
+	public String getRazaosocial() {
+		return razaosocial;
+	}
+
+	public void setRazaosocial(String razaosocial) {
+		this.razaosocial = razaosocial;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+		
+	}
+	
+	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
@@ -22,34 +67,21 @@ public class Cadastro {
 	public String getCelular() {
 		return celular;
 	}
-	public void setCelular(long l) {
-		this.celular = l;
+	public void setCelular(String celular) {
+		this.celular = celular;
 	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}	
+	
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	public void setim(long l) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void setie(long l) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void setCnpj(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void setRazaoSocial(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void setEndereco(Endereco endereco) {
-		// TODO Auto-generated method stub
-		
 	}
 	
 	

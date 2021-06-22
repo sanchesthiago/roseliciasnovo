@@ -1,5 +1,6 @@
 package myapproselicias;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -24,10 +25,10 @@ public static void main(String[] args) {
 	Empresa empresa = new Empresa();
 		Cadastro cadEmpresa = new Cadastro();
 		cadEmpresa.setId(1);
-		cadEmpresa.setRazaoSocial("Roselicias LTDA");
+		cadEmpresa.setRazaosocial("ROSELICIAS LTDA");
 		cadEmpresa.setCnpj("23751874000186");
-		cadEmpresa.setie(999999999l);
-		cadEmpresa.setim(99999999l);
+		cadEmpresa.setIe(999999999l);
+		cadEmpresa.setIm(99999999l);
 		empresa.setCadastro(cadEmpresa);
 		
 	Endereco endereco = new Endereco();
@@ -42,17 +43,18 @@ public static void main(String[] args) {
 		Cadastro cadCliente = new Cadastro();
 		cadCliente.setId(1);
 		cadCliente.setNome("Thiago");
-		cadCliente.setCelular(11958675144l);
+		cadCliente.setCelular("11958675144");
 		cadCliente.setEmail("thiago.sanches@gmail.com");
 		cliente.setCadastro(cadCliente);
 		
 		
-	Produto pao1 = new Produto();
+	/*Produto pao1 = new Produto();
 		pao1.setId(1);
 		pao1.setTitulo("Pão 3 queijos");
 		pao1.setDescricao("Pão Salgado recheado com Gorgonzola, Ricota e Requeijão");
 		pao1.setValorUnit(15.00);
-		pao1.setCodBars("987995945");
+		pao1.setCodBars("987995945");*/
+		
 		
 	Pedido pedido = new Pedido();
 		pedido.setEmpresa(empresa);
@@ -61,6 +63,7 @@ public static void main(String[] args) {
 		pedido.setValorTotal(30.00);
 		pedido.setCcf("25");
 		pedido.setCco("280");
+		
 		
 		Date data = GregorianCalendar.getInstance().getTime();
 		SimpleDateFormat format = new SimpleDateFormat();
@@ -72,6 +75,9 @@ public static void main(String[] args) {
 		item.setQuantidade(2);
 		item.setValorUnit(15.00);
 		item.setValorTotal(item.getValorUnit() * item.getQuantidade());
+		item.setDescricao("Pão Salgado recheado com Gorgonzola, Ricota e Requeijão");
+		item.setCodBars("987995945");
+		item.setTitulo("Pão 3 queijos");
 		
 		itens.add(item);
 		pedido.setItens(itens);
@@ -97,8 +103,14 @@ public static void main(String[] args) {
 		//PrintApp.imprimirPedido(empresa);
 		//PrintApp.imprimirPedido(endereco);
 		//PrintApp.imprimirPedido(pedido);
-		PrintApp.imprimir(pedido);
+	String conteudo = PrintApp.gerarCupom(pedido);
+	
+	File dir = new File("C:\\curso_java\\cupom");
+	 if(!dir.exists())
+			dir.mkdirs();
 		
+		File cupom = new File (dir, "cupom.txt");
+	//	Paths.
 		
 		/*for(PedidoItem i: pedido.getItens()) {
 			System.out.println(i.getProduto().getTitulo() + " Valor Da Venda " + i.getValorVenda() + " Valor Total " + i.getValorTotal());
