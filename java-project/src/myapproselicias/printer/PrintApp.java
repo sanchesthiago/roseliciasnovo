@@ -10,7 +10,7 @@ import java.util.List;
 import myapproselicias.cadastro.Empresa;
 import myapproselicias.cadastro.Cadastro;
 import myapproselicias.cadastro.Endereco;
-
+import myapproselicias.formatador.Formatador;
 public class PrintApp {
 	
 		public static String gerarCupom(Pedido pedido) { 
@@ -20,7 +20,7 @@ public class PrintApp {
 			Endereco e = empresa.getCadastro().getEndereco();
 			
 			sb.append(String.format("\n%s- Nº%s -%s- %s -%s ", e.getLogradouro(), e.getNumero(), e.getComplemento(), e.getBairro(), e.getCidade() ));
-			sb.append(String.format("\nCNPJ:%s", empresa.getCadastro().getCnpj() ));
+			sb.append(String.format("\nCNPJ:%s", Formatador.cnpj (empresa.getCadastro().getCnpj()) ));
 			sb.append(String.format("\nIE:%s ", empresa.getCadastro().getIe() ));
 			sb.append(String.format("\nIM:%s", empresa.getCadastro().getIm()));
 			sb.append("\n---------------------------------------------------------------------------------\n");
