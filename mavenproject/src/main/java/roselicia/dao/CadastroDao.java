@@ -46,7 +46,7 @@ public class CadastroDao {
 	//IMPLEMENTAR
 	public void alterar(Cadastro cadastro) {
 		try {
-		String sql = "UPDATE public.tab_cliente SET pf_pj=?, razao_social=?, cpf_cnpj=?, telefone1=?, telefone2=?, email=?, cep=?, estado=?, cidade=?, rua=?, numero=?, complemento=?, bairro=?, site_instagram=? WHERE codigo=6;";
+		String sql = "UPDATE public.tab_cliente SET pf_pj=?, razao_social=?, cpf_cnpj=?, telefone1=?, telefone2=?, email=?, cep=?, estado=?, cidade=?, rua=?, numero=?, complemento=?, bairro=?, site_instagram=? WHERE codigo=?;";
 		PreparedStatement st = cnn.prepareStatement(sql);
 		st.setString(1, cadastro.getPfpj());
 		st.setString(2, cadastro.getRazaoSocial());
@@ -61,7 +61,8 @@ public class CadastroDao {
 		st.setString(11, cadastro.getNumero());
 		st.setString(12, cadastro.getComplemento());
 		st.setString(13, cadastro.getBairro());
-		st.setString(14, cadastro.getSite());				
+		st.setString(14, cadastro.getSite());	
+		st.setInt(15, cadastro.getCodigo());
 		st.executeUpdate();
 		st.close();
 	} catch (SQLException a) {

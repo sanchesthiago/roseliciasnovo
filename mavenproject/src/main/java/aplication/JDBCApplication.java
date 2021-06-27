@@ -8,20 +8,23 @@ public class JDBCApplication {
 	static CadastroDao dao = new CadastroDao();
 	
 	public static void main (String[] args) {
-		//listando();
+		listando();
 		//Cadastrando();
 		//Alterando();
 		//Excluindo();
-		//listando();
-	
+		
 		
 	}
 	private static void Cadastrando() {
 		CadastroDao dao = new CadastroDao();
 		Cadastro cadastro = new Cadastro();
-		
+		boolean exists = dao.existsByNome(cadastro.getRazaoSocial());
+		if(exists) {			
+			System.out.print("Não foi possivel cadastrar o cliente com o nome Tomas");
+		}else {
+					
 		cadastro.setPfpj("F");
-		cadastro.setRazaoSocial("João da Esquina");
+		cadastro.setRazaoSocial("TIA");
 		cadastro.setCpfcnpj("38409309874");
 		cadastro.setTelefone1(11958675144l);
 		cadastro.setTelefone2(119586l);
@@ -35,12 +38,16 @@ public class JDBCApplication {
 		cadastro.setBairro("Brás");
 		cadastro.setSite("www.terra.com.br");
 		dao.incluir(cadastro);
+			}
 	}	
 	
 	private static void Alterando() {
 		CadastroDao dao = new CadastroDao();
 		Cadastro cadastro = new Cadastro();
+		Integer codigo = dao.buscarNome("Mariazinha");
 		
+		if(codigo !=null) {
+		cadastro.setCodigo(4);
 		cadastro.setPfpj("F");
 		cadastro.setRazaoSocial("Xe alt 26/06");
 		cadastro.setCpfcnpj("38409309874");
@@ -55,13 +62,18 @@ public class JDBCApplication {
 		cadastro.setComplemento("Apto 31 bloco 3");
 		cadastro.setBairro("Brás");
 		cadastro.setSite("www.terra.com.br");
-		dao.alterar(cadastro);		
+		dao.alterar(cadastro);	
+		}
 	}
 	private static void Excluindo() {
 		CadastroDao dao = new CadastroDao();
 		Cadastro cadastro = new Cadastro();
-		//cadastro.setCodigo(2);
-		dao.excluir(1);
+		Integer codigo = dao.buscarNome("Xe alt 26/06");
+	//	boolean exists = dao.existsByNome(cadastro.getRazaoSocial());
+		if(codigo !=null) {			
+			dao.excluir(6);
+		}
+				
 	}
 	
 	private static void listando() { 
