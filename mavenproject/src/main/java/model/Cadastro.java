@@ -1,8 +1,8 @@
 package model;
 
 public class Cadastro {
-
-		private String pfpj;
+	private Integer codigo;
+	private String pfpj;
 	private String razaoSocial;
 	private String cpfcnpj;
 	private Long telefone1;
@@ -18,6 +18,12 @@ public class Cadastro {
 	private String site;
 	
 	
+	public Integer getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
+	}
 	public String getPfpj() {
 		return pfpj;
 	}
@@ -90,6 +96,7 @@ public class Cadastro {
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
+	
 	public String getBairro() {
 		return bairro;
 	}
