@@ -1,0 +1,18 @@
+CREATE TABLE public.tab_cliente (
+	codigo serial NOT NULL,
+	pf_pj bpchar(1) NOT NULL,
+	razao_social varchar(50) NOT NULL,
+	cpf_cnpj varchar(14) NOT NULL,
+	telefone1 numeric(11) NOT NULL,
+	telefone2 numeric(11) NULL,
+	email varchar(70) NOT NULL,
+	cep bpchar(8) NOT NULL,
+	estado bpchar(2) NOT NULL,
+	cidade varchar(50) NOT NULL,
+	rua varchar(50) NOT NULL,
+	numero varchar(6) NOT NULL,
+	complemento varchar(30) NOT NULL,
+	bairro varchar(40) NOT NULL,
+	site_instagram varchar(50) NOT NULL,
+	CONSTRAINT tab_cliente_pkey PRIMARY KEY (codigo)
+);
