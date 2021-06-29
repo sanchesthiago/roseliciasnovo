@@ -13,8 +13,8 @@ public class Pedido {
 	private Double valorTotal;
 	private Cliente cliente;
 	private List<PedidoItem> itens;
-	private String ccf;
-	private String cco;
+	private Integer ccf;
+	private Integer cco;
 	private Empresa empresa;
 	private String titulo;
 	private String descricao;
@@ -62,16 +62,16 @@ public class Pedido {
 		this.empresa = empresa;
 	}
 	
-	public String getCcf() {
+	public Integer getCcf() {
 		return ccf;
 	}
-	public void setCcf(String ccf) {
+	public void setCcf(Integer ccf) {
 		this.ccf = ccf;
 	}
-	public String getCco() {
+	public Integer getCco() {
 		return cco;
 	}
-	public void setCco(String cco) {
+	public void setCco(Integer cco) {
 		this.cco = cco;
 	}
 	public void setItens(List<PedidoItem> itens) {

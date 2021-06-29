@@ -61,8 +61,8 @@ public static void main(String[] args) {
 		pedido.setCliente(cliente);
 		pedido.setId(1);		
 		pedido.setValorTotal(30.00);
-		pedido.setCcf("25");
-		pedido.setCco("280");
+		pedido.setCcf(25);
+		pedido.setCco(280);
 		
 		
 		Date data = GregorianCalendar.getInstance().getTime();
@@ -75,7 +75,7 @@ public static void main(String[] args) {
 		item.setQuantidade(2);
 		item.setValorUnit(15.00);
 		item.setValorTotal(item.getValorUnit() * item.getQuantidade());
-		item.setDescricao("Pão Salgado recheado com Gorgonzola, Ricota e Requeijão");
+		item.setDescricao("Pão Salgado recheado com Gorgonzola e Ricota ");
 		item.setCodBars("987995945");
 		item.setTitulo("Pão 3 queijos");
 		
