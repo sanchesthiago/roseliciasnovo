@@ -37,25 +37,26 @@ public class PrintApp {
 			sb.append(String.format("%s",format.format(d) ));
 			sb.append(String.format(" CCF:%06d CCO:%06d", pedido.getCcf(), pedido.getCco() ));
 			sb.append("\nCUPOM FINAL\n");
-			sb.append(String.format("%-20s%10s%30s%10s%10s\n", "ITEM", "DESCRIÇÃO", "QNT", "UN", "TOTAL"));
+			sb.append(String.format("%-6s%-40s%12s%12s%12s\n", "ITEM", "DESCRIÇÃO", "QUANT", "R$ UNIT", "R$ TOTAL"));
 			sb.append("\n---------------------------------------------------------------------------------\n");
 			
 			List<PedidoItem> itens = pedido.getItens();
 			
 			for(PedidoItem i: itens) {
-				String q = String.format("%s",i.getQuantidade());
-				String vu = String.format("%s",i.getValorUnit());
-				String vt = String.format("%s",i.getValorTotal());
-				String des = String.format("%s", i.getDescricao());
-				String id = String.format("%s",i.getId());
+				String q = String.format("%06d",i.getQuantidade()); //depois usar double
+				String vu = String.format("%.2f",i.getValorUnit());
+				String vt = String.format("%.2f",i.getValorTotal());
+				String des = FormatUtil.quebraLinha(i.getDescricao()) ;
 				
-				sb.append(String.format("%-20s %40s %33s %12s %8s", i.getId(), FormatUtil.quebraLinha(i.getDescricao()) , i.getQuantidade(), i.getValorUnit(), i.getValorTotal() ,id,des,q,vu,vt));
+				sb.append(String.format("%03d %-40s%12s%12s%12s\n", i.getId(), des, q, vu, vt ));
 				
 			}
+			
+			System.out.println(sb.toString());
 			return sb.toString();
 			
 			
-			//System.out.println(sb.toString());
+			
 	
 		}
 		
