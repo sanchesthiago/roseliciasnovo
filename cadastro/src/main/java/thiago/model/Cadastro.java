@@ -48,9 +48,15 @@ public class Cadastro {
         @AttributeOverride(name="nome", column = @Column(name="ce2_nome") ),
         @AttributeOverride(name="email", column = @Column(name="ce2_email") ),
         @AttributeOverride(name="parentesco", column = @Column(name="ce2_parentesco") ),
-        @AttributeOverride(name="telefone", column = @Column(name="ce2_telefone") )
+        @AttributeOverride(name="telefone", column = @Column(name="ce2_telefone") ),
+       
 	} )
+	
+	
 	private ContaoEmergencia contato2;
+	
+	
+	
 	
 	@Enumerated(EnumType.STRING)
 	private Sexo sexo;

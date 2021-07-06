@@ -1,13 +1,18 @@
 package thiago;
 
+import java.sql.PreparedStatement;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-import thiago.repository.AlunoDao;
+import thiago.repository.AlunoRepository;
 import thiago.repository.CursoRepository;
 import thiago.model.Cadastro;
 import thiago.model.Aluno;
@@ -28,7 +33,7 @@ public class CadastroApplication {
 		
 		
 	}
-	@Bean
+	/*@Bean
     public CommandLineRunner run(CursoRepository repository) throws Exception {
         return args -> {
         	Curso curso = new Curso();
@@ -37,32 +42,33 @@ public class CadastroApplication {
         	curso.setNome("Java EE");
         	repository.save(curso);
         };
-	}
+       
+	}*/
         	
-        	
-       /*List<Aluno> alunos = dao.findAll();
-        	
-        for(Aluno a : alunos) {
-        	System.out.println(a.getCadastro().getNome() +  " contato " + a.getCadastro().getContato().getNome());
-        }
+    @Bean
+    public CommandLineRunner run(AlunoRepository repository) throws Exception {	
+		  return args -> {
+		
         	
         	
        Aluno a = new Aluno();
-           a.setNivel(AlunoNivel.AV);
+           a.setNivel(Nivel.AV);
            
            
         Cadastro c = new Cadastro();
+       
            c.setNome("Thiago");
-           c.setEmail("thiago.sanches023@gmail.com");
+           c.setEmail("thiago.sanches023@gmail.com"); 
            c.setRg("155482");
            c.setCpf("90781881899");
            c.setTelefone(1197889789789l);
            c.setSexo(Sexo.M);
            c.setNacionalidade("Brasileiro");
+          c.setDataNascimento(LocalDate.parse("1989-02-26"));
           
-           
-           
-      
+          
+                    
+   
        Endereco e = new Endereco();
      e.setBairro("Bras");
      e.setCep("12345");
@@ -78,19 +84,30 @@ public class CadastroApplication {
         ContaoEmergencia ce = new ContaoEmergencia();
         	ce.setNome("Pedro Sanches");        
         	ce.setTelefone(11987654321l);
-        	ce.setEmail("rwerwe@gfdgdf");
+        	ce.setEmail("testeste@gfdgdf");
         	ce.setParentesco(GrauParentesco.IRMAO);
         	
         	
         	c.setContato(ce);
-        	a.setCadastro(c);
         	
-      	ContaoEmergencia ce2 = new ContaoEmergencia();
+        
+        	
+
+        	ContaoEmergencia ce2 = new ContaoEmergencia();	
+        	ce2.setNome("Thiagoi Sanches");        
+        	ce2.setTelefone(11987654321l);
+        	ce2.setEmail("testeste@gfdgdf");
+        	ce2.setParentesco(GrauParentesco.IRMAO);
+
+        	c.setContato2(ce2);
+        	a.setCadastro(c);
+      	
+      		
       
         
-        dao.save(a);
+        repository.save(a);
            
         };
-    }*/
-
+    }
 }
+

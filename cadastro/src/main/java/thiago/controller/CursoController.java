@@ -1,6 +1,11 @@
 package thiago.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +22,14 @@ import thiago.repository.CursoRepository;
 @RestController
 @RequestMapping("/cursos")
 public class CursoController {
+	
+/*	 @Configuration
+     public class CustomContainer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+       public void customize(ConfigurableServletWebServerFactory factory){
+         factory.setPort(8042);
+       }
+     }*/
+	 
 	@Autowired
 	private CursoRepository repository;
 	
@@ -60,5 +73,6 @@ public class CursoController {
 		else
 			return null;
 			*/
+			
 	}
 }
